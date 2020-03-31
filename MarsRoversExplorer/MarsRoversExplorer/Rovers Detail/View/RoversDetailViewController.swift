@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 class RoversDetailSectionHeader: UICollectionReusableView {
 	let textLabel = UILabel()
@@ -117,7 +118,7 @@ extension RoversDetailViewController: UICollectionViewDataSource, UICollectionVi
 		
 		if let url = URL(string: item.photoURL) {
 			#warning("IMPROVE!!! CANT LOAD THE IMAGE USING THISS")
-			cell.imageView.load(url: url)
+			cell.imageView.kf.setImage(with: url)
 		}
 		
 		return cell
