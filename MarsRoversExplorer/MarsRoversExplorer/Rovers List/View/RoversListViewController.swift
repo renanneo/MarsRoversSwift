@@ -8,12 +8,13 @@
 
 import UIKit
 
-class RoversListViewController: UIViewController {
-  let viewmodel: RoverListViewModelType
+class RoversListViewController: UIViewController, AlertPresentableView {
+	#warning("Change to use RoversListViewModelType and conform to AlertPresentableView")
+  let viewmodel: RoversListViewModel
   var items = [RoverItemViewModel]()
   let tableView = UITableView(frame: .zero, style: .plain)
   
-  init(viewmodel: RoverListViewModelType) {
+  init(viewmodel: RoversListViewModel) {
     self.viewmodel = viewmodel
     super.init(nibName: nil, bundle: nil)
   }
@@ -33,6 +34,8 @@ class RoversListViewController: UIViewController {
       self?.items = items
       self?.tableView.reloadData()
     }
+		
+		bindToAlerts()
   }
   
   func setupNavigationBar() {

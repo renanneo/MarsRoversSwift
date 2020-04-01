@@ -52,7 +52,7 @@ enum MarsAPIRouter: Router {
     //extract this to Service, and pass just a dictionary..
     case .getPhotos(_ , let camera, let sol):
 			var queryItems = [URLQueryItem(name: "sol", value: String(sol)),
-			URLQueryItem(name: "page", value: "1"),
+			//URLQueryItem(name: "page", value: "1"),
 			URLQueryItem(name: "api_key", value: accessToken)]
 			
 			if let camera = camera {
@@ -71,6 +71,10 @@ enum MarsAPIRouter: Router {
       return .get
     }
   }
+	
+	var cachePolicy: URLRequest.CachePolicy {
+		return .returnCacheDataElseLoad
+	}
   
 }
 

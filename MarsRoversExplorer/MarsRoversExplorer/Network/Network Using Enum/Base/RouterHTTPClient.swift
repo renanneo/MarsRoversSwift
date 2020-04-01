@@ -22,14 +22,14 @@ class RouterHTTPClient {
     components.scheme = router.scheme
     components.host = router.host
     components.path = router.path
-    //components.port = 8080
     components.queryItems = router.parameters
     
     guard let url = components.url else {
       fatalError("invalid url")
     }
     var urlRequest = URLRequest(url: url)
-    
+		
+		urlRequest.cachePolicy = router.cachePolicy
     urlRequest.httpMethod = router.method.rawValue
     
     let dataTask = session.dataTask(with: urlRequest) { data, response, error in
@@ -49,8 +49,7 @@ class RouterHTTPClient {
       //it shouldn't be created here, should get from router
       let decoder = JSONDecoder()
       decoder.keyDecodingStrategy = .convertFromSnakeCase
-			#warning("verify why it is not working")
-			//decoder.dateDecodingStrategy = .iso8601
+			decoder.dateDecodingStrategy = .formatted(DateFormatter.yyyyMMdd)
       let responseObject = try! decoder.decode(T.self, from: data)
       
       DispatchQueue.main.async {

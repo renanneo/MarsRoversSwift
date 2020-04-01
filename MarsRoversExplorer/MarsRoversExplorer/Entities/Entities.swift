@@ -66,17 +66,17 @@ struct ManifestResponse: Codable {
 struct Manifest: Codable {
   struct ManifestPhoto: Codable {
     let sol: Int
-    var earthDate: String?
+    var earthDate: Date?
     let totalPhotos: Int
     let cameras: [CameraName]
   }
   
   let name: RoverName
-  let landingDate: String
-  let launchDate: String
+  let landingDate: Date
+  let launchDate: Date
   let status: String
   let maxSol: Int
-  let maxDate: String
+  let maxDate: Date
   let totalPhotos: Int
   let photos: [ManifestPhoto]
 }

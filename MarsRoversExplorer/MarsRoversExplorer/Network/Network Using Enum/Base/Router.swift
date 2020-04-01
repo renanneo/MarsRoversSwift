@@ -8,16 +8,11 @@
 
 import Foundation
 
-//enum HTTPMethod: String {
-//  case get = "GET"
-//  case post = "POST"
-//  //...
-//}
-
 protocol Router {
   var scheme: String {get}
   var host: String {get}
   var path: String {get}
   var parameters: [URLQueryItem]? {get}
   var method: HTTPMethod {get}
+	var cachePolicy: URLRequest.CachePolicy {get}
 }

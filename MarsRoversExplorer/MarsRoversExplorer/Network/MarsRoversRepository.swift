@@ -44,35 +44,37 @@ class DefaultMarsRoversRepository {
 extension DefaultMarsRoversRepository: MarsRoversRepository {
   
   func loadManifest(forRover rover: RoverName, completion: @escaping (Result<ManifestResponse, Error>) -> ()) {
-		if let manifest = manifest[rover] {
-			completion(.success(manifest))
-		} else {
-			client.loadManifest(forRover: rover) { result in
-				switch result {
-				case .failure(_):
-					completion(result)
-				case .success(let response):
-					self.manifest[rover] = response
-					completion(result)
-				}
-			}
-		}
+		client.loadManifest(forRover: rover, completion: completion)
+//		if let manifest = manifest[rover] {
+//			completion(.success(manifest))
+//		} else {
+//			client.loadManifest(forRover: rover) { result in
+//				switch result {
+//				case .failure(_):
+//					completion(result)
+//				case .success(let response):
+//					self.manifest[rover] = response
+//					completion(result)
+//				}
+//			}
+//		}
 	}
 	
 	func loadPhotos(forRover rover: RoverName, camera: CameraName?, sol: Int, completion: @escaping (Result<Photos, Error>) -> ()) {
-		let key = "\(rover)\(camera?.rawValue ?? "")\(sol)"
-		if let photos = photos[key] {
-			completion(.success(photos))
-		} else {
-			client.loadPhotos(forRover: rover, camera: camera, sol: sol) { result in
-				switch result {
-				case .failure(_):
-					completion(result)
-				case .success(let response):
-					self.photos[key] = response
-					completion(result)
-				}
-			}
-		}
+		client.loadPhotos(forRover: rover, camera: camera, sol: sol, completion: completion)
+//		let key = "\(rover)\(camera?.rawValue ?? "")\(sol)"
+//		if let photos = photos[key] {
+//			completion(.success(photos))
+//		} else {
+//			client.loadPhotos(forRover: rover, camera: camera, sol: sol) { result in
+//				switch result {
+//				case .failure(_):
+//					completion(result)
+//				case .success(let response):
+//					self.photos[key] = response
+//					completion(result)
+//				}
+//			}
+//		}
 	}
 }
