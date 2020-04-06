@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1E0B9EF8243B16A7004918F9 /* DateExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E0B9EF6243B16A7004918F9 /* DateExtensions.swift */; };
+		1E0B9EF9243B16A7004918F9 /* DatePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E0B9EF7243B16A7004918F9 /* DatePicker.swift */; };
+		1E0B9EFB243B16C3004918F9 /* SimplePickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E0B9EFA243B16C3004918F9 /* SimplePickerViewController.swift */; };
+		1E0B9EFD243B1727004918F9 /* DaysViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E0B9EFC243B1727004918F9 /* DaysViewController.swift */; };
 		1E2507C5243218320061ADB8 /* MarsRoversHTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E2507C4243218320061ADB8 /* MarsRoversHTTPClient.swift */; };
 		1E2507C624321ACC0061ADB8 /* MarsRoversRouterClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E2507C2243217C90061ADB8 /* MarsRoversRouterClient.swift */; };
 		1E2507C724321ACE0061ADB8 /* MarsRoversClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E671BD523F092FA0059E4E7 /* MarsRoversClient.swift */; };
@@ -70,6 +74,10 @@
 		087A828EA668064A7C6122AB /* Pods-MarsRoversExplorer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MarsRoversExplorer.debug.xcconfig"; path = "Target Support Files/Pods-MarsRoversExplorer/Pods-MarsRoversExplorer.debug.xcconfig"; sourceTree = "<group>"; };
 		1920FAEE642984F6219E3BA3 /* Pods-MarsRoversExplorerUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MarsRoversExplorerUITests.debug.xcconfig"; path = "Target Support Files/Pods-MarsRoversExplorerUITests/Pods-MarsRoversExplorerUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		1A31E023F2AD8101B94E0CE0 /* Pods_MarsRoversExplorerUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MarsRoversExplorerUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		1E0B9EF6243B16A7004918F9 /* DateExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateExtensions.swift; sourceTree = "<group>"; };
+		1E0B9EF7243B16A7004918F9 /* DatePicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatePicker.swift; sourceTree = "<group>"; };
+		1E0B9EFA243B16C3004918F9 /* SimplePickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimplePickerViewController.swift; sourceTree = "<group>"; };
+		1E0B9EFC243B1727004918F9 /* DaysViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DaysViewController.swift; sourceTree = "<group>"; };
 		1E2507C2243217C90061ADB8 /* MarsRoversRouterClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarsRoversRouterClient.swift; sourceTree = "<group>"; };
 		1E2507C4243218320061ADB8 /* MarsRoversHTTPClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarsRoversHTTPClient.swift; sourceTree = "<group>"; };
 		1E2507C92433399B0061ADB8 /* RoversDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoversDetailViewController.swift; sourceTree = "<group>"; };
@@ -238,6 +246,17 @@
 			path = "Network Using Enum";
 			sourceTree = "<group>";
 		};
+		1E7D4BFA2436FA4A00AA47C7 /* Date Picker */ = {
+			isa = PBXGroup;
+			children = (
+				1E0B9EF6243B16A7004918F9 /* DateExtensions.swift */,
+				1E0B9EF7243B16A7004918F9 /* DatePicker.swift */,
+				1E0B9EFA243B16C3004918F9 /* SimplePickerViewController.swift */,
+				1E0B9EFC243B1727004918F9 /* DaysViewController.swift */,
+			);
+			path = "Date Picker";
+			sourceTree = "<group>";
+		};
 		1E8E77592433E5B600E7354D /* Alert */ = {
 			isa = PBXGroup;
 			children = (
@@ -289,6 +308,7 @@
 		1E9F3CF123E8D2C1004D6A11 /* MarsRoversExplorer */ = {
 			isa = PBXGroup;
 			children = (
+				1E7D4BFA2436FA4A00AA47C7 /* Date Picker */,
 				1E8E77612434C2E800E7354D /* PickerView */,
 				1E8E77592433E5B600E7354D /* Alert */,
 				1E9F3CFB23E8D2C4004D6A11 /* Assets.xcassets */,
@@ -628,9 +648,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				1E671BCE23F044400059E4E7 /* RoversCoordinator.swift in Sources */,
+				1E0B9EF8243B16A7004918F9 /* DateExtensions.swift in Sources */,
 				1E2507CC243339A50061ADB8 /* RoversDetailViewModel.swift in Sources */,
 				1E671BBD23EE6C440059E4E7 /* Observable.swift in Sources */,
 				1E671BD023F0553B0059E4E7 /* Coordinator.swift in Sources */,
+				1E0B9EFB243B16C3004918F9 /* SimplePickerViewController.swift in Sources */,
 				1E9F3D2523E8D2E7004D6A11 /* MarsRoversRouter.swift in Sources */,
 				1E2507CA2433399B0061ADB8 /* RoversDetailViewController.swift in Sources */,
 				1E8E77582433E4E700E7354D /* AlertViewModel.swift in Sources */,
@@ -651,10 +673,12 @@
 				1EBD482A2433585600DCCE04 /* FileCache.swift in Sources */,
 				1E671BC123EE7A8B0059E4E7 /* MarsRoversRepository.swift in Sources */,
 				1E8E775B2433E5C400E7354D /* AlertControllerBuilder.swift in Sources */,
+				1E0B9EFD243B1727004918F9 /* DaysViewController.swift in Sources */,
 				1E8E775D2433E95300E7354D /* AlertPresentable.swift in Sources */,
 				1E2507C724321ACE0061ADB8 /* MarsRoversClient.swift in Sources */,
 				1E8E775F2434C1E500E7354D /* MarsRoversAPIDateFormatter.swift in Sources */,
 				1E9F3D3023E90020004D6A11 /* RoversListViewModel.swift in Sources */,
+				1E0B9EF9243B16A7004918F9 /* DatePicker.swift in Sources */,
 				1E2507C5243218320061ADB8 /* MarsRoversHTTPClient.swift in Sources */,
 				1E671BE223F0A49A0059E4E7 /* RequestParameters.swift in Sources */,
 				1E9F3CF323E8D2C1004D6A11 /* AppDelegate.swift in Sources */,

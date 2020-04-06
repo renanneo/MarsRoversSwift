@@ -45,6 +45,7 @@ class RoversListViewModel: RoverListViewModelType {
 	func setupWithManifest(manifest: Manifest) {
 		self.manifest = manifest
 		self.photosBySol = Dictionary(grouping: manifest.photos, by: { $0.sol })
+		//solSelected(sol: 0)
 	}
 	
 	private func cameraSelected(camera: CameraName) {
