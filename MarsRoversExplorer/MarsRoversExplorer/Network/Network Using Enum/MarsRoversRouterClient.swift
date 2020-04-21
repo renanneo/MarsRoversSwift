@@ -10,11 +10,11 @@ import Foundation
 
 class MarsRoversRouterClient: RouterHTTPClient, MarsRoversClient {
 	
-	func loadManifest(forRover rover: RoverName, completion: @escaping (Result<ManifestResponse, Error>) -> ()) {
-		request(router: MarsAPIRouter.getManifest(rover), completion: completion)
+	func loadManifest(forRover rover: RoverName, completion: @escaping (Result<ManifestResponse, Error>) -> ()) -> URLSessionTask {
+		return request(router: MarsAPIRouter.getManifest(rover), completion: completion)
 	}
 	
-	func loadPhotos(forRover rover: RoverName, camera: CameraName?, sol: Int, completion: @escaping (Result<Photos, Error>) -> ()) {
-		request(router: MarsAPIRouter.getPhotos(rover, camera, sol), completion: completion)
+	func loadPhotos(forRover rover: RoverName, camera: CameraName?, sol: Int?, date: Date?, completion: @escaping (Result<PhotosResponse, Error>) -> ()) -> URLSessionTask {
+		return request(router: MarsAPIRouter.getPhotos(rover, camera, sol, date), completion: completion)
 	}
 }

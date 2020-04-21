@@ -12,7 +12,7 @@ import UIKit
 
 class RoversCoordinator: Coordinator {
   let repository: MarsRoversRepository
-  private let navigationController = UINavigationController()
+  private let navigationController = RoversNavigationController()
   
   init(repository: MarsRoversRepository) {
     self.repository = repository

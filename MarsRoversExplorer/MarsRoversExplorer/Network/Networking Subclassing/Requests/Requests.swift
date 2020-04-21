@@ -9,7 +9,7 @@
 import Foundation
 
 struct GetPhotos: ApiRequest {
-  typealias Response = Photos
+  typealias Response = PhotosResponse
   
   let roverName: RoverName
   let camera: CameraName?

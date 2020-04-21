@@ -7,32 +7,38 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1E0B9EF8243B16A7004918F9 /* DateExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E0B9EF6243B16A7004918F9 /* DateExtensions.swift */; };
 		1E0B9EF9243B16A7004918F9 /* DatePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E0B9EF7243B16A7004918F9 /* DatePicker.swift */; };
-		1E0B9EFB243B16C3004918F9 /* SimplePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E0B9EFA243B16C3004918F9 /* SimplePicker.swift */; };
 		1E0B9EFD243B1727004918F9 /* DaysViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E0B9EFC243B1727004918F9 /* DaysViewController.swift */; };
 		1E2507C5243218320061ADB8 /* MarsRoversHTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E2507C4243218320061ADB8 /* MarsRoversHTTPClient.swift */; };
 		1E2507C624321ACC0061ADB8 /* MarsRoversRouterClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E2507C2243217C90061ADB8 /* MarsRoversRouterClient.swift */; };
 		1E2507C724321ACE0061ADB8 /* MarsRoversClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E671BD523F092FA0059E4E7 /* MarsRoversClient.swift */; };
 		1E2507CA2433399B0061ADB8 /* RoversDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E2507C92433399B0061ADB8 /* RoversDetailViewController.swift */; };
 		1E2507CC243339A50061ADB8 /* RoversDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E2507CB243339A50061ADB8 /* RoversDetailViewModel.swift */; };
+		1E420E3A24436AC900FADD06 /* 1712-bms-rocket.json in Resources */ = {isa = PBXBuildFile; fileRef = 1E420E3924436AC900FADD06 /* 1712-bms-rocket.json */; };
+		1E48CE34244365C000E5ED35 /* SimplePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E48CE33244365C000E5ED35 /* SimplePicker.swift */; };
+		1E58FE21244D9D54005BD425 /* RoversNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E58FE20244D9D54005BD425 /* RoversNavigationController.swift */; };
+		1E58FE24244D9E3D005BD425 /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E58FE23244D9E3D005BD425 /* GradientView.swift */; };
+		1E58FE26244F90DB005BD425 /* Manifest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E58FE25244F90DB005BD425 /* Manifest.swift */; };
+		1E5C378D244D7BDC001B754F /* UIView+Constraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E5C378C244D7BDC001B754F /* UIView+Constraints.swift */; };
+		1E5C378F244D7BF9001B754F /* UIViewController+Containment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E5C378E244D7BF9001B754F /* UIViewController+Containment.swift */; };
 		1E671BBD23EE6C440059E4E7 /* Observable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E671BBC23EE6C440059E4E7 /* Observable.swift */; };
 		1E671BC123EE7A8B0059E4E7 /* MarsRoversRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E671BC023EE7A8B0059E4E7 /* MarsRoversRepository.swift */; };
 		1E671BC723EFBA070059E4E7 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E671BC623EFBA070059E4E7 /* AppCoordinator.swift */; };
 		1E671BCE23F044400059E4E7 /* RoversCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E671BCD23F044400059E4E7 /* RoversCoordinator.swift */; };
 		1E671BD023F0553B0059E4E7 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E671BCF23F0553B0059E4E7 /* Coordinator.swift */; };
 		1E671BD823F0A02F0059E4E7 /* ApiRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E671BD723F0A02F0059E4E7 /* ApiRequest.swift */; };
-		1E671BDB23F0A15F0059E4E7 /* GetPhotos.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E671BDA23F0A15F0059E4E7 /* GetPhotos.swift */; };
+		1E671BDB23F0A15F0059E4E7 /* Requests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E671BDA23F0A15F0059E4E7 /* Requests.swift */; };
 		1E671BDD23F0A1B20059E4E7 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E671BDC23F0A1B20059E4E7 /* Router.swift */; };
 		1E671BE023F0A4210059E4E7 /* HTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E671BDF23F0A4210059E4E7 /* HTTPClient.swift */; };
 		1E671BE223F0A49A0059E4E7 /* RequestParameters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E671BE123F0A4990059E4E7 /* RequestParameters.swift */; };
-		1E8E77562433DA0D00E7354D /* ImageLoading.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E8E77552433DA0D00E7354D /* ImageLoading.swift */; };
+		1E8E77562433DA0D00E7354D /* UIImageView+ImageLoading.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E8E77552433DA0D00E7354D /* UIImageView+ImageLoading.swift */; };
 		1E8E77582433E4E700E7354D /* AlertViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E8E77572433E4E700E7354D /* AlertViewModel.swift */; };
 		1E8E775B2433E5C400E7354D /* AlertControllerBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E8E775A2433E5C400E7354D /* AlertControllerBuilder.swift */; };
 		1E8E775D2433E95300E7354D /* AlertPresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E8E775C2433E95300E7354D /* AlertPresentable.swift */; };
-		1E8E775F2434C1E500E7354D /* MarsRoversAPIDateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E8E775E2434C1E500E7354D /* MarsRoversAPIDateFormatter.swift */; };
+		1E8E775F2434C1E500E7354D /* DateFormatter+CustomFormats.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E8E775E2434C1E500E7354D /* DateFormatter+CustomFormats.swift */; };
 		1E8E77632434C2F500E7354D /* PickerModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E8E77622434C2F500E7354D /* PickerModels.swift */; };
 		1E8E77652434C38700E7354D /* HTTPMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E8E77642434C38700E7354D /* HTTPMethod.swift */; };
+		1E9C07862443693800E1CF8C /* 4999-rocket.json in Resources */ = {isa = PBXBuildFile; fileRef = 1E9C07852443693800E1CF8C /* 4999-rocket.json */; };
 		1E9F3CF323E8D2C1004D6A11 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E9F3CF223E8D2C1004D6A11 /* AppDelegate.swift */; };
 		1E9F3CF523E8D2C1004D6A11 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E9F3CF423E8D2C1004D6A11 /* SceneDelegate.swift */; };
 		1E9F3CF723E8D2C1004D6A11 /* RoversListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E9F3CF623E8D2C1004D6A11 /* RoversListViewController.swift */; };
@@ -42,12 +48,15 @@
 		1E9F3D1523E8D2C4004D6A11 /* MarsRoversExplorerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E9F3D1423E8D2C4004D6A11 /* MarsRoversExplorerUITests.swift */; };
 		1E9F3D2523E8D2E7004D6A11 /* MarsRoversRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E9F3D2323E8D2E7004D6A11 /* MarsRoversRouter.swift */; };
 		1E9F3D2623E8D2E7004D6A11 /* RouterHTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E9F3D2423E8D2E7004D6A11 /* RouterHTTPClient.swift */; };
-		1E9F3D2923E8F800004D6A11 /* Entities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E9F3D2823E8F800004D6A11 /* Entities.swift */; };
+		1E9F3D2923E8F800004D6A11 /* Photos.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E9F3D2823E8F800004D6A11 /* Photos.swift */; };
 		1E9F3D2D23E8FAB5004D6A11 /* JSONFileLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E9F3D2C23E8FAB5004D6A11 /* JSONFileLoader.swift */; };
 		1E9F3D3023E90020004D6A11 /* RoversListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E9F3D2F23E90020004D6A11 /* RoversListViewModel.swift */; };
 		1EB4B61E23EE524A001DB388 /* RoverTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EB4B61D23EE5249001DB388 /* RoverTableViewCell.swift */; };
 		1EBD482A2433585600DCCE04 /* FileCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EBD48292433585600DCCE04 /* FileCache.swift */; };
-		1EE9260023EE5865003C10B2 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EE925FF23EE5865003C10B2 /* Extensions.swift */; };
+		1EDF4F7A244BEFE400333657 /* CalendarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EDF4F79244BEFE400333657 /* CalendarViewModel.swift */; };
+		1EDF4F7C244BF09800333657 /* CalendarBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EDF4F7B244BF09800333657 /* CalendarBuilder.swift */; };
+		1EDF4F7E244BF37300333657 /* CalendarPresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EDF4F7D244BF37300333657 /* CalendarPresentable.swift */; };
+		1EE9260023EE5865003C10B2 /* Encodable+ToDictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EE925FF23EE5865003C10B2 /* Encodable+ToDictionary.swift */; };
 		6B08B78951F46DB6F3CAD3C6 /* Pods_MarsRoversExplorerTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5CE2712B2054D7C61EDA3B90 /* Pods_MarsRoversExplorerTests.framework */; };
 		A7FD7A586B4BD49D874E4224 /* Pods_MarsRoversExplorerUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A31E023F2AD8101B94E0CE0 /* Pods_MarsRoversExplorerUITests.framework */; };
 		DE9A014FEA90D6BAFC59682E /* Pods_MarsRoversExplorer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A32A7AAB25DA428E1F0C2164 /* Pods_MarsRoversExplorer.framework */; };
@@ -74,14 +83,19 @@
 		087A828EA668064A7C6122AB /* Pods-MarsRoversExplorer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MarsRoversExplorer.debug.xcconfig"; path = "Target Support Files/Pods-MarsRoversExplorer/Pods-MarsRoversExplorer.debug.xcconfig"; sourceTree = "<group>"; };
 		1920FAEE642984F6219E3BA3 /* Pods-MarsRoversExplorerUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MarsRoversExplorerUITests.debug.xcconfig"; path = "Target Support Files/Pods-MarsRoversExplorerUITests/Pods-MarsRoversExplorerUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		1A31E023F2AD8101B94E0CE0 /* Pods_MarsRoversExplorerUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MarsRoversExplorerUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		1E0B9EF6243B16A7004918F9 /* DateExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateExtensions.swift; sourceTree = "<group>"; };
 		1E0B9EF7243B16A7004918F9 /* DatePicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatePicker.swift; sourceTree = "<group>"; };
-		1E0B9EFA243B16C3004918F9 /* SimplePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimplePicker.swift; sourceTree = "<group>"; };
 		1E0B9EFC243B1727004918F9 /* DaysViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DaysViewController.swift; sourceTree = "<group>"; };
 		1E2507C2243217C90061ADB8 /* MarsRoversRouterClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarsRoversRouterClient.swift; sourceTree = "<group>"; };
 		1E2507C4243218320061ADB8 /* MarsRoversHTTPClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarsRoversHTTPClient.swift; sourceTree = "<group>"; };
 		1E2507C92433399B0061ADB8 /* RoversDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoversDetailViewController.swift; sourceTree = "<group>"; };
 		1E2507CB243339A50061ADB8 /* RoversDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoversDetailViewModel.swift; sourceTree = "<group>"; };
+		1E420E3924436AC900FADD06 /* 1712-bms-rocket.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "1712-bms-rocket.json"; sourceTree = "<group>"; };
+		1E48CE33244365C000E5ED35 /* SimplePicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SimplePicker.swift; sourceTree = "<group>"; };
+		1E58FE20244D9D54005BD425 /* RoversNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoversNavigationController.swift; sourceTree = "<group>"; };
+		1E58FE23244D9E3D005BD425 /* GradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
+		1E58FE25244F90DB005BD425 /* Manifest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Manifest.swift; sourceTree = "<group>"; };
+		1E5C378C244D7BDC001B754F /* UIView+Constraints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Constraints.swift"; sourceTree = "<group>"; };
+		1E5C378E244D7BF9001B754F /* UIViewController+Containment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Containment.swift"; sourceTree = "<group>"; };
 		1E671BBC23EE6C440059E4E7 /* Observable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Observable.swift; sourceTree = "<group>"; };
 		1E671BC023EE7A8B0059E4E7 /* MarsRoversRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarsRoversRepository.swift; sourceTree = "<group>"; };
 		1E671BC623EFBA070059E4E7 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
@@ -89,17 +103,18 @@
 		1E671BCF23F0553B0059E4E7 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		1E671BD523F092FA0059E4E7 /* MarsRoversClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarsRoversClient.swift; sourceTree = "<group>"; };
 		1E671BD723F0A02F0059E4E7 /* ApiRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiRequest.swift; sourceTree = "<group>"; };
-		1E671BDA23F0A15F0059E4E7 /* GetPhotos.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetPhotos.swift; sourceTree = "<group>"; };
+		1E671BDA23F0A15F0059E4E7 /* Requests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Requests.swift; sourceTree = "<group>"; };
 		1E671BDC23F0A1B20059E4E7 /* Router.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
 		1E671BDF23F0A4210059E4E7 /* HTTPClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPClient.swift; sourceTree = "<group>"; };
 		1E671BE123F0A4990059E4E7 /* RequestParameters.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestParameters.swift; sourceTree = "<group>"; };
-		1E8E77552433DA0D00E7354D /* ImageLoading.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLoading.swift; sourceTree = "<group>"; };
+		1E8E77552433DA0D00E7354D /* UIImageView+ImageLoading.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+ImageLoading.swift"; sourceTree = "<group>"; };
 		1E8E77572433E4E700E7354D /* AlertViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertViewModel.swift; sourceTree = "<group>"; };
 		1E8E775A2433E5C400E7354D /* AlertControllerBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertControllerBuilder.swift; sourceTree = "<group>"; };
 		1E8E775C2433E95300E7354D /* AlertPresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertPresentable.swift; sourceTree = "<group>"; };
-		1E8E775E2434C1E500E7354D /* MarsRoversAPIDateFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarsRoversAPIDateFormatter.swift; sourceTree = "<group>"; };
+		1E8E775E2434C1E500E7354D /* DateFormatter+CustomFormats.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DateFormatter+CustomFormats.swift"; sourceTree = "<group>"; };
 		1E8E77622434C2F500E7354D /* PickerModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerModels.swift; sourceTree = "<group>"; };
 		1E8E77642434C38700E7354D /* HTTPMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPMethod.swift; sourceTree = "<group>"; };
+		1E9C07852443693800E1CF8C /* 4999-rocket.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "4999-rocket.json"; sourceTree = "<group>"; };
 		1E9F3CEF23E8D2C1004D6A11 /* MarsRoversExplorer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MarsRoversExplorer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1E9F3CF223E8D2C1004D6A11 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1E9F3CF423E8D2C1004D6A11 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -115,12 +130,15 @@
 		1E9F3D1623E8D2C4004D6A11 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1E9F3D2323E8D2E7004D6A11 /* MarsRoversRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MarsRoversRouter.swift; sourceTree = "<group>"; };
 		1E9F3D2423E8D2E7004D6A11 /* RouterHTTPClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RouterHTTPClient.swift; sourceTree = "<group>"; };
-		1E9F3D2823E8F800004D6A11 /* Entities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Entities.swift; sourceTree = "<group>"; };
+		1E9F3D2823E8F800004D6A11 /* Photos.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Photos.swift; sourceTree = "<group>"; };
 		1E9F3D2C23E8FAB5004D6A11 /* JSONFileLoader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONFileLoader.swift; sourceTree = "<group>"; };
 		1E9F3D2F23E90020004D6A11 /* RoversListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoversListViewModel.swift; sourceTree = "<group>"; };
 		1EB4B61D23EE5249001DB388 /* RoverTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoverTableViewCell.swift; sourceTree = "<group>"; };
 		1EBD48292433585600DCCE04 /* FileCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileCache.swift; sourceTree = "<group>"; };
-		1EE925FF23EE5865003C10B2 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		1EDF4F79244BEFE400333657 /* CalendarViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarViewModel.swift; sourceTree = "<group>"; };
+		1EDF4F7B244BF09800333657 /* CalendarBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarBuilder.swift; sourceTree = "<group>"; };
+		1EDF4F7D244BF37300333657 /* CalendarPresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarPresentable.swift; sourceTree = "<group>"; };
+		1EE925FF23EE5865003C10B2 /* Encodable+ToDictionary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Encodable+ToDictionary.swift"; sourceTree = "<group>"; };
 		526C28EA9A6636CEAAB6BF49 /* Pods-MarsRoversExplorerTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MarsRoversExplorerTests.debug.xcconfig"; path = "Target Support Files/Pods-MarsRoversExplorerTests/Pods-MarsRoversExplorerTests.debug.xcconfig"; sourceTree = "<group>"; };
 		5CE2712B2054D7C61EDA3B90 /* Pods_MarsRoversExplorerTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MarsRoversExplorerTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A32A7AAB25DA428E1F0C2164 /* Pods_MarsRoversExplorer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MarsRoversExplorer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -157,6 +175,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1E0B9F0324436134004918F9 /* Lottie Animations */ = {
+			isa = PBXGroup;
+			children = (
+				1E420E3924436AC900FADD06 /* 1712-bms-rocket.json */,
+				1E9C07852443693800E1CF8C /* 4999-rocket.json */,
+			);
+			path = "Lottie Animations";
+			sourceTree = "<group>";
+		};
 		1E2507C1243213AA0061ADB8 /* Networking Subclassing */ = {
 			isa = PBXGroup;
 			children = (
@@ -186,12 +213,13 @@
 			path = View;
 			sourceTree = "<group>";
 		};
-		1E671BC223EE7EB90059E4E7 /* Entities */ = {
+		1E671BC223EE7EB90059E4E7 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				1E9F3D2823E8F800004D6A11 /* Entities.swift */,
+				1E9F3D2823E8F800004D6A11 /* Photos.swift */,
+				1E58FE25244F90DB005BD425 /* Manifest.swift */,
 			);
-			path = Entities;
+			path = Models;
 			sourceTree = "<group>";
 		};
 		1E671BC523EFB9DF0059E4E7 /* Coordinators */ = {
@@ -200,6 +228,7 @@
 				1E8E77602434C2A000E7354D /* Base */,
 				1E671BC623EFBA070059E4E7 /* AppCoordinator.swift */,
 				1E671BCD23F044400059E4E7 /* RoversCoordinator.swift */,
+				1E58FE20244D9D54005BD425 /* RoversNavigationController.swift */,
 			);
 			path = Coordinators;
 			sourceTree = "<group>";
@@ -216,6 +245,7 @@
 		1E671BD123F091A50059E4E7 /* Repository */ = {
 			isa = PBXGroup;
 			children = (
+				1E671BC023EE7A8B0059E4E7 /* MarsRoversRepository.swift */,
 			);
 			path = Repository;
 			sourceTree = "<group>";
@@ -231,7 +261,7 @@
 		1E671BD923F0A1510059E4E7 /* Requests */ = {
 			isa = PBXGroup;
 			children = (
-				1E671BDA23F0A15F0059E4E7 /* GetPhotos.swift */,
+				1E671BDA23F0A15F0059E4E7 /* Requests.swift */,
 			);
 			path = Requests;
 			sourceTree = "<group>";
@@ -249,9 +279,8 @@
 		1E7D4BFA2436FA4A00AA47C7 /* Date Picker */ = {
 			isa = PBXGroup;
 			children = (
-				1E0B9EF6243B16A7004918F9 /* DateExtensions.swift */,
+				1E48CE33244365C000E5ED35 /* SimplePicker.swift */,
 				1E0B9EF7243B16A7004918F9 /* DatePicker.swift */,
-				1E0B9EFA243B16C3004918F9 /* SimplePicker.swift */,
 				1E0B9EFC243B1727004918F9 /* DaysViewController.swift */,
 			);
 			path = "Date Picker";
@@ -308,6 +337,8 @@
 		1E9F3CF123E8D2C1004D6A11 /* MarsRoversExplorer */ = {
 			isa = PBXGroup;
 			children = (
+				1E0B9F0324436134004918F9 /* Lottie Animations */,
+				1EDF4F78244BEFA000333657 /* Calendar */,
 				1E7D4BFA2436FA4A00AA47C7 /* Date Picker */,
 				1E8E77612434C2E800E7354D /* PickerView */,
 				1E8E77592433E5B600E7354D /* Alert */,
@@ -318,7 +349,7 @@
 				1E9F3D0023E8D2C4004D6A11 /* Info.plist */,
 				1E671BC523EFB9DF0059E4E7 /* Coordinators */,
 				1EB4B62023EE526D001DB388 /* Util */,
-				1E671BC223EE7EB90059E4E7 /* Entities */,
+				1E671BC223EE7EB90059E4E7 /* Models */,
 				1E9F3D2223E8D2CF004D6A11 /* Network */,
 				1E671BD123F091A50059E4E7 /* Repository */,
 				1E671BCC23F0441B0059E4E7 /* Rovers Detail */,
@@ -352,7 +383,6 @@
 				1E671BD523F092FA0059E4E7 /* MarsRoversClient.swift */,
 				1E2507C1243213AA0061ADB8 /* Networking Subclassing */,
 				1E671BDE23F0A1C80059E4E7 /* Network Using Enum */,
-				1E671BC023EE7A8B0059E4E7 /* MarsRoversRepository.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -371,6 +401,7 @@
 			children = (
 				1E9F3CF623E8D2C1004D6A11 /* RoversListViewController.swift */,
 				1EB4B61D23EE5249001DB388 /* RoverTableViewCell.swift */,
+				1E58FE23244D9E3D005BD425 /* GradientView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -394,12 +425,24 @@
 			path = Util;
 			sourceTree = "<group>";
 		};
+		1EDF4F78244BEFA000333657 /* Calendar */ = {
+			isa = PBXGroup;
+			children = (
+				1EDF4F79244BEFE400333657 /* CalendarViewModel.swift */,
+				1EDF4F7B244BF09800333657 /* CalendarBuilder.swift */,
+				1EDF4F7D244BF37300333657 /* CalendarPresentable.swift */,
+			);
+			path = Calendar;
+			sourceTree = "<group>";
+		};
 		1EE925FE23EE5853003C10B2 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				1E8E775E2434C1E500E7354D /* MarsRoversAPIDateFormatter.swift */,
-				1EE925FF23EE5865003C10B2 /* Extensions.swift */,
-				1E8E77552433DA0D00E7354D /* ImageLoading.swift */,
+				1E8E77552433DA0D00E7354D /* UIImageView+ImageLoading.swift */,
+				1E8E775E2434C1E500E7354D /* DateFormatter+CustomFormats.swift */,
+				1EE925FF23EE5865003C10B2 /* Encodable+ToDictionary.swift */,
+				1E5C378C244D7BDC001B754F /* UIView+Constraints.swift */,
+				1E5C378E244D7BF9001B754F /* UIViewController+Containment.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -536,7 +579,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				1E9F3CFF23E8D2C4004D6A11 /* LaunchScreen.storyboard in Resources */,
+				1E9C07862443693800E1CF8C /* 4999-rocket.json in Resources */,
 				1E9F3CFC23E8D2C4004D6A11 /* Assets.xcassets in Resources */,
+				1E420E3A24436AC900FADD06 /* 1712-bms-rocket.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -648,41 +693,48 @@
 			buildActionMask = 2147483647;
 			files = (
 				1E671BCE23F044400059E4E7 /* RoversCoordinator.swift in Sources */,
-				1E0B9EF8243B16A7004918F9 /* DateExtensions.swift in Sources */,
 				1E2507CC243339A50061ADB8 /* RoversDetailViewModel.swift in Sources */,
+				1E58FE21244D9D54005BD425 /* RoversNavigationController.swift in Sources */,
 				1E671BBD23EE6C440059E4E7 /* Observable.swift in Sources */,
 				1E671BD023F0553B0059E4E7 /* Coordinator.swift in Sources */,
-				1E0B9EFB243B16C3004918F9 /* SimplePicker.swift in Sources */,
+				1EDF4F7E244BF37300333657 /* CalendarPresentable.swift in Sources */,
+				1E5C378D244D7BDC001B754F /* UIView+Constraints.swift in Sources */,
 				1E9F3D2523E8D2E7004D6A11 /* MarsRoversRouter.swift in Sources */,
+				1E58FE26244F90DB005BD425 /* Manifest.swift in Sources */,
 				1E2507CA2433399B0061ADB8 /* RoversDetailViewController.swift in Sources */,
 				1E8E77582433E4E700E7354D /* AlertViewModel.swift in Sources */,
-				1E9F3D2923E8F800004D6A11 /* Entities.swift in Sources */,
+				1E5C378F244D7BF9001B754F /* UIViewController+Containment.swift in Sources */,
+				1E9F3D2923E8F800004D6A11 /* Photos.swift in Sources */,
 				1E671BE023F0A4210059E4E7 /* HTTPClient.swift in Sources */,
 				1E671BDD23F0A1B20059E4E7 /* Router.swift in Sources */,
 				1E9F3D2D23E8FAB5004D6A11 /* JSONFileLoader.swift in Sources */,
 				1E2507C624321ACC0061ADB8 /* MarsRoversRouterClient.swift in Sources */,
-				1E671BDB23F0A15F0059E4E7 /* GetPhotos.swift in Sources */,
+				1E671BDB23F0A15F0059E4E7 /* Requests.swift in Sources */,
 				1E9F3CF723E8D2C1004D6A11 /* RoversListViewController.swift in Sources */,
 				1E8E77652434C38700E7354D /* HTTPMethod.swift in Sources */,
 				1EB4B61E23EE524A001DB388 /* RoverTableViewCell.swift in Sources */,
 				1E8E77632434C2F500E7354D /* PickerModels.swift in Sources */,
+				1EDF4F7C244BF09800333657 /* CalendarBuilder.swift in Sources */,
 				1E671BC723EFBA070059E4E7 /* AppCoordinator.swift in Sources */,
-				1E8E77562433DA0D00E7354D /* ImageLoading.swift in Sources */,
-				1EE9260023EE5865003C10B2 /* Extensions.swift in Sources */,
+				1E8E77562433DA0D00E7354D /* UIImageView+ImageLoading.swift in Sources */,
+				1EE9260023EE5865003C10B2 /* Encodable+ToDictionary.swift in Sources */,
 				1E9F3D2623E8D2E7004D6A11 /* RouterHTTPClient.swift in Sources */,
+				1E48CE34244365C000E5ED35 /* SimplePicker.swift in Sources */,
 				1EBD482A2433585600DCCE04 /* FileCache.swift in Sources */,
 				1E671BC123EE7A8B0059E4E7 /* MarsRoversRepository.swift in Sources */,
 				1E8E775B2433E5C400E7354D /* AlertControllerBuilder.swift in Sources */,
 				1E0B9EFD243B1727004918F9 /* DaysViewController.swift in Sources */,
 				1E8E775D2433E95300E7354D /* AlertPresentable.swift in Sources */,
 				1E2507C724321ACE0061ADB8 /* MarsRoversClient.swift in Sources */,
-				1E8E775F2434C1E500E7354D /* MarsRoversAPIDateFormatter.swift in Sources */,
+				1E8E775F2434C1E500E7354D /* DateFormatter+CustomFormats.swift in Sources */,
 				1E9F3D3023E90020004D6A11 /* RoversListViewModel.swift in Sources */,
 				1E0B9EF9243B16A7004918F9 /* DatePicker.swift in Sources */,
+				1EDF4F7A244BEFE400333657 /* CalendarViewModel.swift in Sources */,
 				1E2507C5243218320061ADB8 /* MarsRoversHTTPClient.swift in Sources */,
 				1E671BE223F0A49A0059E4E7 /* RequestParameters.swift in Sources */,
 				1E9F3CF323E8D2C1004D6A11 /* AppDelegate.swift in Sources */,
 				1E671BD823F0A02F0059E4E7 /* ApiRequest.swift in Sources */,
+				1E58FE24244D9E3D005BD425 /* GradientView.swift in Sources */,
 				1E9F3CF523E8D2C1004D6A11 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

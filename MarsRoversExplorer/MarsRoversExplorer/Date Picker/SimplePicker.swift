@@ -74,7 +74,7 @@ class SimplePicker<T: CustomStringConvertible>: UICollectionView, UICollectionVi
 	}
 	
 	var onItemSelected: ((T) -> Void)?
-	var onScroll: ((UIScrollView) -> Void)?
+	var onScroll: ((SimplePicker<T>) -> Void)?
 	
 	private let flowLayout: UICollectionViewFlowLayout = {
 		let flow = UICollectionViewFlowLayout()
@@ -85,15 +85,33 @@ class SimplePicker<T: CustomStringConvertible>: UICollectionView, UICollectionVi
 	}()
 	
 	private let items: [T]
+	private let impactGenerator: UIImpactFeedbackGenerator
 	let visibleItems: CGFloat = 3.0
+	var observer: NSKeyValueObservation?
 	
 	init(items: [T] = []) {
 		self.items = items
+		self.impactGenerator = .init(style: .medium)
+		
 		super.init(frame: .zero, collectionViewLayout: self.flowLayout)
+		
 		self.register(SimplePickerCell.self, forCellWithReuseIdentifier: "cell")
 		self.showsHorizontalScrollIndicator = false
 		self.delegate = self
 		self.dataSource = self
+	
+		
+//		self.observer = observe(\Self.bounds, options: .new) { [weak self] object, change in
+//			guard let self = self else {
+//				return
+//			}
+//
+//			if let newBounds = change.newValue {
+//				if newBounds.origin.x.truncatingRemainder(dividingBy:newBounds.width / self.visibleItems) == .zero {
+//					self.impactGenerator.impactOccurred()
+//				}
+//			}
+//		}
 	}
 	
 	required init?(coder: NSCoder) {
@@ -162,6 +180,6 @@ class SimplePicker<T: CustomStringConvertible>: UICollectionView, UICollectionVi
 	
 	func scrollViewDidScroll(_ scrollView: UIScrollView) {
 		scaleCells()
-		onScroll?(scrollView)
+		onScroll?(self)
 	}
 }

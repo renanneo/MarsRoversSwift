@@ -15,7 +15,7 @@ import Foundation
 enum MarsAPIRouter: Router {
   typealias Sol = Int
   
-  case getPhotos(RoverName, CameraName?, Sol)
+  case getPhotos(RoverName, CameraName?, Sol?, Date?)
   case getManifest(RoverName)
   
   var scheme: String {
@@ -37,7 +37,7 @@ enum MarsAPIRouter: Router {
   
   var path: String {
     switch self {
-    case .getPhotos(let rover, _, _):
+    case .getPhotos(let rover, _, _, _):
       return "/mars-photos/api/v1/rovers/\(rover)/photos"
     case .getManifest(let rover):
       return "/mars-photos/api/v1/manifests/\(rover)"
@@ -48,21 +48,30 @@ enum MarsAPIRouter: Router {
   //improve to insert apikey on service layer
   var parameters: [URLQueryItem]? {
     let accessToken = "wdHxpd69QCGjbmlWPvqUcaPc8tRo1Wi89xMENuCT"
+		var queryItems = [URLQueryItem(name: "api_key", value: accessToken)]
     switch self {
     //extract this to Service, and pass just a dictionary..
-    case .getPhotos(_ , let camera, let sol):
-			var queryItems = [URLQueryItem(name: "sol", value: String(sol)),
+    case .getPhotos(_ , let camera, let sol, let date):
+
+			if let date = date {
+				let dateFormatter = DateFormatter.yyyyMMdd
+				let dateStr = dateFormatter.string(from: date)
+				queryItems.append(URLQueryItem(name: "earth_date", value: dateStr))
+			} else if let sol = sol {
+				queryItems.append(URLQueryItem(name: "sol", value: String(sol)))
+			}
+		
 			//URLQueryItem(name: "page", value: "1"),
-			URLQueryItem(name: "api_key", value: accessToken)]
 			
 			if let camera = camera {
 				queryItems.append(URLQueryItem(name: "camera", value: camera.rawValue))
 			}
-			
-      return queryItems
-    case .getManifest:
-      return  [URLQueryItem(name: "api_key", value: accessToken)]
+		
+		case .getManifest: break
+      
     }
+		
+		return queryItems
   }
   
   var method: HTTPMethod {

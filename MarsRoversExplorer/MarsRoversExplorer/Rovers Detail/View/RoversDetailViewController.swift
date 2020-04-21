@@ -43,14 +43,21 @@ class RoversDetailViewController: UIViewController {
 	let viewModel: RoversDetailViewModel
 	var sections = [RoversDetailSectionViewModel]()
 	
-	let collectionView: UICollectionView = {
+	let flowLayout: UICollectionViewFlowLayout = {
 		let flowLayout = UICollectionViewFlowLayout()
 		flowLayout.minimumLineSpacing = 1
 		flowLayout.minimumInteritemSpacing = 1
 		let itemCount: CGFloat = 4.0
 		let width = ceil((UIScreen.main.bounds.size.width / itemCount) - ((itemCount - 1) * flowLayout.minimumInteritemSpacing))
 		flowLayout.itemSize = CGSize(width: width, height:width)
+		return flowLayout
+	}()
+	
+	lazy var collectionView: UICollectionView = {
 		let collectionView = UICollectionView(frame: .zero, collectionViewLayout: flowLayout)
+		collectionView.alwaysBounceVertical = true
+		collectionView.register(RoversDetailCollectionViewCell.self, forCellWithReuseIdentifier: "cell")
+		collectionView.register(RoversDetailSectionHeader.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: "sectionHeader")
 		return collectionView
 	}()
 	
@@ -65,16 +72,17 @@ class RoversDetailViewController: UIViewController {
 	
 	
 	override func viewDidLoad() {
+		super.viewDidLoad()
 		view.backgroundColor = .red
-		setupCollectionView()
 		title = viewModel.title
+		
+		setupCollectionView()
 		
 		viewModel.sections.observe(on: self) { [weak self] sections in
 			self?.sections = sections
 			self?.collectionView.reloadData()
 		}
 		viewModel.viewLoaded()
-		
 	}
 	
 	func setupCollectionView() {
@@ -82,9 +90,6 @@ class RoversDetailViewController: UIViewController {
 		collectionView.sizeToSuperView()
 		collectionView.delegate = self
 		collectionView.dataSource = self
-		collectionView.register(RoversDetailCollectionViewCell.self, forCellWithReuseIdentifier: "cell")
-		collectionView.alwaysBounceVertical = true
-		collectionView.register(RoversDetailSectionHeader.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: "sectionHeader")
 	}
 }
 

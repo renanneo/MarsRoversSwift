@@ -26,7 +26,7 @@ extension ActionViewModel {
 		
 		if style == .cancel {
 			uiAlertActionStyle = .cancel
-		} else if style == .destructive{
+		} else if style == .destructive {
 			uiAlertActionStyle = .destructive
 		}
 		

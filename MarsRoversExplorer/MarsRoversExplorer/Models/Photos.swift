@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct Photos: Codable {
+struct PhotosResponse: Codable {
   let photos: [Photo]
 }
 
@@ -59,25 +59,5 @@ struct Camera: Codable {
   let fullName: String
 }
 
-struct ManifestResponse: Codable {
-  let photoManifest: Manifest
-}
 
-struct Manifest: Codable {
-  struct ManifestPhoto: Codable {
-    let sol: Int
-    var earthDate: Date?
-    let totalPhotos: Int
-    let cameras: [CameraName]
-  }
-  
-  let name: RoverName
-  let landingDate: Date
-  let launchDate: Date
-  let status: String
-  let maxSol: Int
-  let maxDate: Date
-  let totalPhotos: Int
-  let photos: [ManifestPhoto]
-}
 

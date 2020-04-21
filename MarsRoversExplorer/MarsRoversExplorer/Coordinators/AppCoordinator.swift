@@ -24,8 +24,8 @@ class AppCoordinator: Coordinator {
   
   //maybe have an DIContainer, or something to instantiate app dependencies
   func start() {
-    //showRovers()
-		showTest()
+		showRovers()
+	//showTest()
   }
   
   fileprivate func showRovers() {
@@ -37,8 +37,13 @@ class AppCoordinator: Coordinator {
 	
 	fileprivate func showTest() {
 		
-		let datePicker = DatePickerViewController(initialDate: date(forYear: 2015, month: 11), finalDate: date(forYear: 2020, month: 5), currentDate: Date())
-		self.rootViewController.add(childController: datePicker)
+//		let datePicker = DatePickerViewController(initialDate: date(forYear: 2015, month: 11), endDate: date(forYear: 2020, month: 5), currentDate: Date())
+//		datePicker.onDateSelected = { date in
+//			let dateFormatter = DateFormatter()
+//			dateFormatter.dateStyle = .full
+//			print(dateFormatter.string(from: date))
+//		}
+//		self.rootViewController.add(childController: datePicker)
 	}
 	
 	func date(forYear year: Int, month: Int) -> Date {

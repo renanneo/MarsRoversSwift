@@ -7,12 +7,24 @@
 //
 
 import UIKit
+import Lottie
 
-class RoversListViewController: UIViewController, AlertPresentableView {
+class RoversListViewController: UIViewController, AlertPresentableView, CalendarPresentableView {
 	#warning("Change to use RoversListViewModelType and conform to AlertPresentableView")
   let viewmodel: RoversListViewModel
   var items = [RoverItemViewModel]()
-  let tableView = UITableView(frame: .zero, style: .plain)
+	let itemsLoadingView = AnimationView(name: "1712-bms-rocket")
+	
+	let tableView: UITableView = {
+		let tableView = UITableView(frame: .zero, style: .plain)
+		tableView.register(RoverTableViewCell.self, forCellReuseIdentifier: "cell")
+		tableView.tableFooterView = UIView()
+		tableView.rowHeight = UIScreen.main.bounds.size.width * 9 / 16
+		tableView.backgroundView = UIImageView(image: UIImage(named: "background"))
+		tableView.showsVerticalScrollIndicator = false
+		
+		return tableView
+	}()
   
   init(viewmodel: RoversListViewModel) {
     self.viewmodel = viewmodel
@@ -25,42 +37,49 @@ class RoversListViewController: UIViewController, AlertPresentableView {
   
   override func viewDidLoad() {
     super.viewDidLoad()
-    self.title = viewmodel.title
-    
-    setupNavigationBar()
+    title = viewmodel.title
+
     setupTableView()
-    
-    viewmodel.items.observe(on: self) { [weak self] items in
-      self?.items = items
-      self?.tableView.reloadData()
-    }
+		//setupItemsLoadingView()
 		
+		viewmodel.items.observe(on: self) { [weak self] items in
+			self?.items = items
+			self?.tableView.reloadData()
+		}
+		
+//		viewmodel.itemsLoadProgress.observe(on: self) { [weak self] progress in
+//			guard let self = self else {
+//				return
+//			}
+//			if let progress = progress {
+//				self.itemsLoadingView.alpha = 1
+//				self.itemsLoadingView.currentProgress = CGFloat(progress)
+//			} else {
+//				self.itemsLoadingView.alpha = 0
+//			}
+//		}
+		
+		bindToCalendar()
 		bindToAlerts()
   }
-  
-  func setupNavigationBar() {
-    let textAttributes = [NSAttributedString.Key.foregroundColor : UIColor.white]
-    if let navBar = navigationController?.navigationBar {
-      navBar.titleTextAttributes = textAttributes
-      navBar.largeTitleTextAttributes = textAttributes
-      navBar.prefersLargeTitles = true
-      navBar.setBackgroundImage(UIImage(), for: .default)
-      navBar.shadowImage = UIImage()
-			navBar.tintColor = .white
-      navBar.isTranslucent = true
-    }
-  }
+	
+	func setupItemsLoadingView() {
+		itemsLoadingView.frame = CGRect(x: 0, y: 0, width: 100, height: 100)
+		itemsLoadingView.center = view.center
+		view.addSubview(itemsLoadingView)
+		//itemsLoadingView.alpha = 0
+		itemsLoadingView.contentMode = .scaleAspectFill
+		itemsLoadingView.play()
+		//		itemsLoadingView.backgroundColor = .red
+		//		itemsLoadingView.backgroundBehavior = .pauseAndRestore
+		//		itemsLoadingView.animationSpeed = 0.5
+	}
   
   func setupTableView() {
     view.addSubview(tableView)
     tableView.sizeToSuperView()
-    tableView.register(RoverTableViewCell.self, forCellReuseIdentifier: "cell")
     tableView.delegate = self
     tableView.dataSource = self
-    tableView.tableFooterView = UIView()
-    tableView.rowHeight = UIScreen.main.bounds.size.width * 9 / 16
-    tableView.backgroundView = UIImageView(image: UIImage(named: "background"))
-    tableView.showsVerticalScrollIndicator = false
   }
 }
 
@@ -68,7 +87,7 @@ extension RoversListViewController: UITableViewDelegate, UITableViewDataSource {
   
   func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
     cell.alpha = 0
-    cell.transform = .init(translationX: 0, y: 200)
+    cell.transform = .init(translationX: -200, y: 0)
     
     UIView.animate(withDuration: 0.4, delay: 0.05 * Double(indexPath.section), usingSpringWithDamping: 0.8, initialSpringVelocity: 0, options: .curveEaseOut, animations: {
       cell.transform = .identity

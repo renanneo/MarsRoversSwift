@@ -8,12 +8,6 @@
 
 import UIKit
 
-class GradientView: UIView {
-  override open class var layerClass: AnyClass {
-    return CAGradientLayer.classForCoder()
-  }
-}
-
 class RoverTableViewCell: UITableViewCell {
   let titleLabel: UILabel = {
     let label = UILabel()

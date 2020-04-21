@@ -57,8 +57,4 @@ class HTTPClient {
 		return dataTask
 	}
 	
-	
-	
-	
-	
 }
