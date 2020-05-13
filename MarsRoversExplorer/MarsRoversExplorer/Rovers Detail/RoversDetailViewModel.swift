@@ -7,7 +7,6 @@
 //
 
 import Foundation
-import Combine
 
 fileprivate struct PhotoInterval {
 	let startPhoto: Manifest.PhotoInfo
@@ -42,7 +41,7 @@ struct RoverDetailItemViewModel {
 }
 
 protocol RoversDetailViewModelOutput {
-	@Published var title: String { get }
+	var title: String { get }
 	var state: Observable<State> { get }
 	var headerViewModel: Observable<RoversDetailHeaderViewModel> { get }
 	var calendarModel: Observable<CalendarViewModel?> { get }
@@ -53,7 +52,7 @@ protocol RoversDetailViewModelInput {
 	func viewLoaded()
 }
 
-protocol RoversDetailViewModelType: ObservableObject {
+protocol RoversDetailViewModelType {
 	var output: RoversDetailViewModelOutput { get }
 	var input: RoversDetailViewModelInput { get }
 }
