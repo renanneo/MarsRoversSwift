@@ -9,8 +9,8 @@
 import Foundation
 
 struct CalendarViewModel {
-	let startDate: Date
-	let endDate: Date
+	let dateInterval: DateInterval
+	let currentDate: Date?
 	let availableDates: Set<Date>
 	
 	var onDatePicked: ((Date) -> ())?

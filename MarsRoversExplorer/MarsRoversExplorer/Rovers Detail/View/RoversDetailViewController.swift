@@ -7,41 +7,13 @@
 //
 
 import UIKit
-
-class RoversDetailSectionHeader: UICollectionReusableView {
-	let textLabel = UILabel()
-	override init(frame: CGRect) {
-		super.init(frame: frame)
-		textLabel.textColor = .white
-		textLabel.font = .systemFont(ofSize: 20.0, weight: .bold)
-		addSubview(textLabel)
-		textLabel.anchor(top: topAnchor, bottom: bottomAnchor, leading: leadingAnchor, trailing: trailingAnchor, padding: .init(top: 0, left: 20, bottom: 0, right: 0))
-	}
-	
-	required init?(coder: NSCoder) {
-		fatalError("init(coder:) has not been implemented")
-	}
-}
-
-class RoversDetailCollectionViewCell: UICollectionViewCell {
-	
-	let imageView = UIImageView()
-	
-	override init(frame: CGRect) {
-		super.init(frame: frame)
-		addSubview(imageView)
-		imageView.sizeToSuperView()
-	}
-	
-	required init?(coder: NSCoder) {
-		fatalError("init(coder:) has not been implemented")
-	}
-	
-}
+import Lottie
 
 class RoversDetailViewController: UIViewController {
-	let viewModel: RoversDetailViewModel
-	var sections = [RoversDetailSectionViewModel]()
+	let viewmodel: RoversDetailViewModelType
+	fileprivate var sections = [RoversDetailSectionViewModel]()
+	let headerButton = UIButton()
+	let loadingView = AnimationView(name: "1712-bms-rocket")
 	
 	let flowLayout: UICollectionViewFlowLayout = {
 		let flowLayout = UICollectionViewFlowLayout()
@@ -61,8 +33,8 @@ class RoversDetailViewController: UIViewController {
 		return collectionView
 	}()
 	
-	init(viewModel: RoversDetailViewModel) {
-		self.viewModel = viewModel
+	init(viewModel: RoversDetailViewModelType) {
+		self.viewmodel = viewModel
 		super.init(nibName: nil, bundle: nil)
 	}
 	
@@ -70,26 +42,105 @@ class RoversDetailViewController: UIViewController {
 		fatalError("init(coder:) has not been implemented")
 	}
 	
-	
 	override func viewDidLoad() {
 		super.viewDidLoad()
-		view.backgroundColor = .red
-		title = viewModel.title
+		initialSetup()
+		title = viewmodel.output.title
 		
-		setupCollectionView()
+		setupBindings()
 		
-		viewModel.sections.observe(on: self) { [weak self] sections in
-			self?.sections = sections
-			self?.collectionView.reloadData()
+		viewmodel.input.viewLoaded()
+	}
+	
+	private func setupBindings() {
+		viewmodel.output.calendarModel.observe(on: self) { [weak self] model in
+			guard let model = model else {
+				self?.dismiss(animated: true, completion: nil)
+				return
+			}
+			
+			let calendar = CalendarBuilder.buildCalendar(for: model)
+			self?.present(calendar, animated: true, completion: nil)
 		}
-		viewModel.viewLoaded()
+		
+		viewmodel.output.state.observe(on: self) { [weak self] state in
+				guard let self = self else {
+					return
+				}
+				switch state {
+				case .success(let sections):
+					self.handleSuccess(sections)
+				case .error(let error):
+					print(error.localizedDescription)
+				case .loading:
+					self.handleLoading()
+				}
+			}
+		
+		viewmodel.output.headerViewModel.observe(on: self) { [weak self] headerVM in
+			self?.headerButton.setTitle(headerVM.title, for: .normal)
+		}
+	}
+	
+	@objc private func headerTapped() {
+		viewmodel.input.headerTapped()
+	}
+}
+
+//State Handling
+private extension RoversDetailViewController {
+	func handleLoading() {
+		headerButton.setTitle(nil, for: .normal)
+		collectionView.alpha = 0
+		loadingView.stop()
+		loadingView.alpha = 1
+		loadingView.play(fromProgress: 0.6, toProgress: 0.8, loopMode: .autoReverse, completion: nil)
+	}
+	
+	func handleSuccess(_ sections: [RoversDetailSectionViewModel]) {
+		self.sections = sections
+		collectionView.reloadData()
+		UIView.animate(withDuration: 0.2, animations: {
+			self.loadingView.transform = .init(translationX: 50, y: -50)
+			self.loadingView.alpha = 0
+			self.collectionView.alpha = 1
+		}) { finished in
+			self.loadingView.transform = .identity
+			self.loadingView.stop()
+		}
+	}
+}
+
+//Setup
+private extension RoversDetailViewController {
+	func initialSetup() {
+		view.backgroundColor = .black
+		setupHeader()
+		setupCollectionView()
+		setupLoadingView()
 	}
 	
 	func setupCollectionView() {
 		view.addSubview(collectionView)
-		collectionView.sizeToSuperView()
+		collectionView.anchor(top: headerButton.bottomAnchor, bottom: view.bottomAnchor, leading: view.leadingAnchor, trailing: view.trailingAnchor)
 		collectionView.delegate = self
 		collectionView.dataSource = self
+	}
+	
+	func setupHeader() {
+		headerButton.setTitleColor(.white, for: .normal)
+		headerButton.contentHorizontalAlignment = .left
+		view.addSubview(headerButton)
+		headerButton.anchor(top: view.safeAreaLayoutGuide.topAnchor, bottom: nil, leading: view.leadingAnchor, trailing: view.trailingAnchor, padding: .init(top: 0, left: 20, bottom: 0, right: 0), height: 44)
+		headerButton.addTarget(self, action: #selector(self.headerTapped), for: .touchUpInside)
+	}
+	
+	func setupLoadingView() {
+		loadingView.backgroundBehavior = .pauseAndRestore
+		loadingView.frame = CGRect(x: 0, y: 0, width: 100, height: 100)
+		loadingView.center = view.center
+		view.addSubview(loadingView)
+		loadingView.contentMode = .scaleAspectFill
 	}
 }
 

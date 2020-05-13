@@ -19,6 +19,8 @@
 		1E58FE21244D9D54005BD425 /* RoversNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E58FE20244D9D54005BD425 /* RoversNavigationController.swift */; };
 		1E58FE24244D9E3D005BD425 /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E58FE23244D9E3D005BD425 /* GradientView.swift */; };
 		1E58FE26244F90DB005BD425 /* Manifest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E58FE25244F90DB005BD425 /* Manifest.swift */; };
+		1E58FE2A2451484F005BD425 /* RoverDetailSectionHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E58FE292451484F005BD425 /* RoverDetailSectionHeader.swift */; };
+		1E58FE2C2451486C005BD425 /* RoverDetailCollectionVIewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E58FE2B2451486C005BD425 /* RoverDetailCollectionVIewCell.swift */; };
 		1E5C378D244D7BDC001B754F /* UIView+Constraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E5C378C244D7BDC001B754F /* UIView+Constraints.swift */; };
 		1E5C378F244D7BF9001B754F /* UIViewController+Containment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E5C378E244D7BF9001B754F /* UIViewController+Containment.swift */; };
 		1E671BBD23EE6C440059E4E7 /* Observable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E671BBC23EE6C440059E4E7 /* Observable.swift */; };
@@ -94,6 +96,8 @@
 		1E58FE20244D9D54005BD425 /* RoversNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoversNavigationController.swift; sourceTree = "<group>"; };
 		1E58FE23244D9E3D005BD425 /* GradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
 		1E58FE25244F90DB005BD425 /* Manifest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Manifest.swift; sourceTree = "<group>"; };
+		1E58FE292451484F005BD425 /* RoverDetailSectionHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoverDetailSectionHeader.swift; sourceTree = "<group>"; };
+		1E58FE2B2451486C005BD425 /* RoverDetailCollectionVIewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoverDetailCollectionVIewCell.swift; sourceTree = "<group>"; };
 		1E5C378C244D7BDC001B754F /* UIView+Constraints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Constraints.swift"; sourceTree = "<group>"; };
 		1E5C378E244D7BF9001B754F /* UIViewController+Containment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Containment.swift"; sourceTree = "<group>"; };
 		1E671BBC23EE6C440059E4E7 /* Observable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Observable.swift; sourceTree = "<group>"; };
@@ -209,6 +213,8 @@
 			isa = PBXGroup;
 			children = (
 				1E2507C92433399B0061ADB8 /* RoversDetailViewController.swift */,
+				1E58FE292451484F005BD425 /* RoverDetailSectionHeader.swift */,
+				1E58FE2B2451486C005BD425 /* RoverDetailCollectionVIewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -708,6 +714,7 @@
 				1E671BE023F0A4210059E4E7 /* HTTPClient.swift in Sources */,
 				1E671BDD23F0A1B20059E4E7 /* Router.swift in Sources */,
 				1E9F3D2D23E8FAB5004D6A11 /* JSONFileLoader.swift in Sources */,
+				1E58FE2C2451486C005BD425 /* RoverDetailCollectionVIewCell.swift in Sources */,
 				1E2507C624321ACC0061ADB8 /* MarsRoversRouterClient.swift in Sources */,
 				1E671BDB23F0A15F0059E4E7 /* Requests.swift in Sources */,
 				1E9F3CF723E8D2C1004D6A11 /* RoversListViewController.swift in Sources */,
@@ -735,6 +742,7 @@
 				1E9F3CF323E8D2C1004D6A11 /* AppDelegate.swift in Sources */,
 				1E671BD823F0A02F0059E4E7 /* ApiRequest.swift in Sources */,
 				1E58FE24244D9E3D005BD425 /* GradientView.swift in Sources */,
+				1E58FE2A2451484F005BD425 /* RoverDetailSectionHeader.swift in Sources */,
 				1E9F3CF523E8D2C1004D6A11 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

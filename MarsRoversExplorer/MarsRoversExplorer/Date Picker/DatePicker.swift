@@ -46,21 +46,20 @@ class DatePickerViewController: UIViewController {
 		}
 	}
 	var availableDates: [String: Date] = [:]
-	let initialDate: Date
-	let endDate: Date
+	let dateInterval: DateInterval
 	let months = 12
 	let years: [Int]
 	var onDateSelected: ((Date) -> Void)?
 	
 	private var vcs = [DaysViewController]()
 	
-	init(initialDate: Date, endDate: Date, availableDates: Set<Date>, currentDate: Date?) {
-		self.initialDate = initialDate
-		self.endDate = endDate
+	init(dateInterval: DateInterval, availableDates: Set<Date>, currentDate: Date?) {
+		self.dateInterval = dateInterval
+		let initialDate = dateInterval.start
 		self.currentDate = currentDate ?? initialDate
 		
 		let initialYear = calendar.component(.year, from: initialDate)
-		let finalYear = calendar.component(.year, from: endDate)
+		let finalYear = calendar.component(.year, from: dateInterval.end)
 		years = Array(initialYear...finalYear)
 		//let currentYear = calendar.component(.year, from: currentDate)
 		
@@ -124,7 +123,7 @@ class DatePickerViewController: UIViewController {
 	private func key(for date: Date) -> String? {
 		let dateComps = calendar.dateComponents([.year, .month, .day], from: date)
 		if let y = dateComps.year, let m = dateComps.month, let d = dateComps.day {
-			return "\(y)\(m)\(d)"
+			return "\(y)-\(m)-\(d)"
 		}
 		
 		return nil

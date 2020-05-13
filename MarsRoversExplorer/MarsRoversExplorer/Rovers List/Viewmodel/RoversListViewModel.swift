@@ -21,8 +21,9 @@ protocol RoverListViewModelType: AlertPresentableViewModel, CalendarPresentableV
 
 class RoversListViewModel: RoverListViewModelType {
 
+	private var loading = false
 	private var manifest: Manifest?
-	private var photosBySol = [Date: [Manifest.ManifestPhoto]]()
+	//private var photosBySol = [Date: [Manifest.ManifestPhoto]]()
 	private let rovers: [RoverName] = [.curiosity, .opportunity, .spirit]
 	private let repository: MarsRoversRepository
 	
@@ -37,8 +38,23 @@ class RoversListViewModel: RoverListViewModelType {
 	
 	//var observer: NSKeyValueObservation? = nil
 	
+	init(repository: MarsRoversRepository) {
+		self.repository = repository
+		self.items.value = rovers.map {
+			rover in RoverItemViewModel(title: rover.rawValue, imageFileName: rover.rawValue.lowercased(), tapped: { [weak self] in
+				self?.roverSelected(rover: rover)
+			})
+		}
+	}
+	
 	private func roverSelected(rover: RoverName) {
+		guard !loading else {
+			return
+		}
+		
+		loading = true
 		repository.loadManifest(forRover: rover) { result in
+			self.loading = false
 			switch result {
 			case .failure(let error):
 				print(error.localizedDescription)
@@ -67,19 +83,19 @@ class RoversListViewModel: RoverListViewModelType {
 //		})
 	}
 	
-	func setupWithManifest(manifest: Manifest) {
-		self.manifest = manifest
-		let date = Date()
-		self.photosBySol = Dictionary(grouping: manifest.photos, by: { $0.earthDate ?? date })
-		let dates = Set(self.photosBySol.keys)
-		if let startDate = dates.min(), let endDate = dates.max() {
+	private func setupWithManifest(manifest: Manifest) {
+//		self.manifest = manifest
+//		let date = Date()
+//		self.photosBySol = Dictionary(grouping: manifest.photos, by: { $0.earthDate ?? date })
+//		let dates = Set(self.photosBySol.keys)
+//		if let startDate = dates.min(), let endDate = dates.max() {
 //			let calendarModel = CalendarViewModel(startDate: startDate, endDate: endDate, availableDates: dates, onDatePicked: { [weak self] date in
 //				self?.dateSelected(date: date)
 //			})
 //			self.calendarModel.value = calendarModel;
 			//dateSelected(date: endDate)
 			onRoverSelected?(manifest)
-		}
+//		}
 
 		//solSelected(sol: 0)
 	}
@@ -88,27 +104,18 @@ class RoversListViewModel: RoverListViewModelType {
 		print(camera)
 	}
 	
-	private func dateSelected(date: Date) {
-		let cancelAction = ActionViewModel(title: "Cancel", style: .cancel, handler: nil)
-		var actions = [cancelAction]
-
-		if let photo = self.photosBySol[date]?.first {
-			photo.cameras.forEach { camera in
-				actions.append(ActionViewModel(title: camera.rawValue, style: .default, handler: { [weak self] action in
-					self?.cameraSelected(camera: camera)
-				}))
-			}
-			let alert = AlertViewModel(actions: actions, title: "Select a Camera", message: nil, prefferedStyle: .actionSheet)
-			self.alertModel.value = alert
-		}
-	}
-	
-	init(repository: MarsRoversRepository) {
-		self.repository = repository
-		self.items.value = rovers.map {
-			rover in RoverItemViewModel(title: rover.rawValue, imageFileName: rover.rawValue.lowercased(), tapped: { [weak self] in
-				self?.roverSelected(rover: rover)
-			})
-		}
-	}
+//	private func dateSelected(date: Date) {
+//		let cancelAction = ActionViewModel(title: "Cancel", style: .cancel, handler: nil)
+//		var actions = [cancelAction]
+//
+//		if let photo = self.photosBySol[date]?.first {
+//			photo.cameras.forEach { camera in
+//				actions.append(ActionViewModel(title: camera.rawValue, style: .default, handler: { [weak self] action in
+//					self?.cameraSelected(camera: camera)
+//				}))
+//			}
+//			let alert = AlertViewModel(actions: actions, title: "Select a Camera", message: nil, prefferedStyle: .actionSheet)
+//			self.alertModel.value = alert
+//		}
+//	}
 }

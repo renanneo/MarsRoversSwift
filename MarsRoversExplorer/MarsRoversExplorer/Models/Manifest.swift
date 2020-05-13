@@ -13,7 +13,7 @@ struct ManifestResponse: Codable {
 }
 
 struct Manifest: Codable {
-  struct ManifestPhoto: Codable {
+  struct PhotoInfo: Codable {
     let sol: Int
     var earthDate: Date?
     let totalPhotos: Int
@@ -27,5 +27,5 @@ struct Manifest: Codable {
   let maxSol: Int
   let maxDate: Date
   let totalPhotos: Int
-  let photos: [ManifestPhoto]
+  let photos: [PhotoInfo]
 }

@@ -82,7 +82,7 @@ enum MarsAPIRouter: Router {
   }
 	
 	var cachePolicy: URLRequest.CachePolicy {
-		return .returnCacheDataElseLoad
+		return .reloadRevalidatingCacheData
 	}
   
 }

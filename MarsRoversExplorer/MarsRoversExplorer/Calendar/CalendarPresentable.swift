@@ -22,6 +22,7 @@ extension CalendarPresentableView where Self: UIViewController {
 	func bindToCalendar() {
 		viewmodel.calendarModel.observe(on: self) { [weak self] model in
 			guard let model = model else {
+				self?.dismiss(animated: true, completion: nil)
 				return
 			}
 			

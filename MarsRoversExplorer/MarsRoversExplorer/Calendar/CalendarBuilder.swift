@@ -9,8 +9,8 @@
 import Foundation
 
 class CalendarBuilder {
-	static func buildCalendar(for model:CalendarViewModel) -> DatePickerViewController {
-		let picker = DatePickerViewController(initialDate: model.startDate, endDate: model.endDate, availableDates: model.availableDates, currentDate: nil)
+	static func buildCalendar(for model: CalendarViewModel) -> DatePickerViewController {
+		let picker = DatePickerViewController(dateInterval: model.dateInterval, availableDates: model.availableDates, currentDate: model.currentDate)
 		picker.onDateSelected = model.onDatePicked
 		
 		return picker

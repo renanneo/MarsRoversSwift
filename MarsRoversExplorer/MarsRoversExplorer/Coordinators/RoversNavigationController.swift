@@ -18,7 +18,7 @@ class RoversNavigationController: UINavigationController {
     let textAttributes = [NSAttributedString.Key.foregroundColor : UIColor.white]
 		navigationBar.titleTextAttributes = textAttributes
 		navigationBar.largeTitleTextAttributes = textAttributes
-		navigationBar.prefersLargeTitles = true
+		//navigationBar.prefersLargeTitles = true
 		navigationBar.setBackgroundImage(UIImage(), for: .default)
 		navigationBar.shadowImage = UIImage()
 		navigationBar.tintColor = .white

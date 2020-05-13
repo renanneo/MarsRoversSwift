@@ -98,7 +98,7 @@ class DaysViewController: UIViewController {
 			return
 		}
 		
-		guard let dateWithoutDay = calendar.date(from: calendar.dateComponents([.year,.month], from: date)) else {
+		guard let dateWithoutDay = calendar.date(from: calendar.dateComponents([.year, .month], from: date)) else {
 			//invalid date, what to do?
 			return
 		}
